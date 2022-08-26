@@ -12,8 +12,7 @@ export class HomePage {
   constructor() { }
 
   focus() {
-    this.mybutton.el.focus();
-  }
+    this.mybutton.el.shadowRoot.querySelector('button').focus();  }
 
   blur() {
     this.mybutton.el.blur();
