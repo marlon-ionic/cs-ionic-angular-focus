@@ -12,9 +12,7 @@ export class HomePage {
   constructor() { }
 
   focus() {
-    setTimeout(() => {
     this.mybutton.el.focus();
-    }, 1000);
   }
 
   blur() {
