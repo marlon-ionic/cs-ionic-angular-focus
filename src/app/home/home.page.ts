@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { IonButton } from '@ionic/angular';
+import { IonButton, IonItem } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -9,17 +9,17 @@ import { IonButton } from '@ionic/angular';
 export class HomePage {
 
   @ViewChild('mybutton') mybutton;
+  @ViewChild('myselect') myselect;
+  @ViewChild('myselectitem') myselectitem: IonItem;
   constructor() { }
 
-  focus() {
-    this.mybutton.el.shadowRoot.querySelector('button').focus();  }
-
-  blur() {
-    this.mybutton.el.blur();
+  focusSelect() {
+    console.log('myselectitem', this.myselectitem);
+    console.log('focusSelect', this.myselect.el.shadowRoot.querySelector('button#ion-sel-0'));
+    this.myselect.el.shadowRoot.querySelector('button#ion-sel-0').focus();
   }
 
-  click() {
-    alert('button action');
+  blurSelect() {
+    this.myselect.el.blur();
   }
-
 }

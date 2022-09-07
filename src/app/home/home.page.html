@@ -13,7 +13,16 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-button #mybutton (keydown.enter)="click()">Button</ion-button>
-  <ion-button (click)="focus()">Focus</ion-button>
-  <ion-button (click)="blur()">Blur</ion-button>
+  <ion-list>
+    <ion-item #myselectitem>
+      <ion-select #myselect placeholder="Select fruit">
+        <ion-select-option value="apples">Apples</ion-select-option>
+        <ion-select-option value="oranges">Oranges</ion-select-option>
+        <ion-select-option value="bananas">Bananas</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="focusSelect()">Focus on Select</ion-button>
+  <ion-button (click)="blurSelect()">Blur on Select</ion-button>
 </ion-content>
